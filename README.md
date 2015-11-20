@@ -14,12 +14,11 @@ $ npm install --save keybase-user
 var kbuser = require('keybase-user');
 
 var newUser = {
-  basics: kbuser.basics('malgorithms', 'github'),
-  public_keys: kbuser.public_keys('malgorithms', 'github')
+  basics: kbuser.basics('chris'),
+  public_keys: kbuser.public_keys('bitcoyne', 'coinbase')
 }
 
 console.log(newUser.public_keys.primary.key_fingerprint); // => 94aa3a5bdbd40ea549cabaf9fbc07d6a97016cb3
-
 console.log(newUser.basics);
 
   /* 
