@@ -24,9 +24,9 @@ var keybase_user = function() {
     }
   }
 
-  exports.full = function(username, src) {
+  exports.full = function(val, src) {
     src = checkSrc(src);
-    var res = httpGet(url + src + '=' + username);
+    var res = httpGet(url + src + '=' + val);
     if (src == 'username') {
       return res.them;
     } else {
@@ -34,9 +34,9 @@ var keybase_user = function() {
     }
   }
 
-  exports.basics = function(username, src) {
+  exports.basics = function(val, src) {
     src = checkSrc(src);
-    var res = httpGet(url + src + '=' + username + '&fields=basics');
+    var res = httpGet(url + src + '=' + val + '&fields=basics');
     if (src == 'username') {
       return res.them.basics;
     } else {
@@ -44,9 +44,9 @@ var keybase_user = function() {
     }
   }
 
-  exports.profile = function(username, src) {
+  exports.profile = function(val, src) {
     src = checkSrc(src);
-    var res = httpGet(url + src + '=' + username + '&fields=profile');
+    var res = httpGet(url + src + '=' + val + '&fields=profile');
     if (src == 'username') {
       return res.them.profile;
     } else {
@@ -54,9 +54,9 @@ var keybase_user = function() {
     }
   }
 
-  exports.public_keys = function(username, src) {
+  exports.public_keys = function(val, src) {
     src = checkSrc(src);
-    var res = httpGet(url + src + '=' + username + '&fields=public_keys');
+    var res = httpGet(url + src + '=' + val + '&fields=public_keys');
     if (src == 'username') {
       return res.them.public_keys;
     } else {
@@ -64,9 +64,9 @@ var keybase_user = function() {
     }
   }
 
-  exports.crypto_add = function(username, src) {
+  exports.crypto_add = function(val, src) {
     src = checkSrc(src);
-    var res = httpGet(url + src + '=' + username  + '&fields=cryptocurrency_addresses');
+    var res = httpGet(url + src + '=' + val  + '&fields=cryptocurrency_addresses');
     if (src == 'username') {
       return res.them.cryptocurrency_addresses;
     } else {
