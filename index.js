@@ -15,30 +15,63 @@ var keybase_user = function() {
   }
 
   var url = 'https://keybase.io/_/api/1.0/user/lookup.json?';
-
-  exports.full = function(username) {
-    var res = httpGet(url + 'usernames=' + username);
-    return res.them;
+  function checkSrc(src) {
+    if (src === undefined) {
+      src = 'username';
+      return src;
+    } else {
+      return src;
+    }
   }
 
-  exports.basics = function(username) {
-    var res = httpGet(url + 'username=' + username);
-    return res.them.basics;
+  exports.full = function(username, src) {
+    src = checkSrc(src);
+    var res = httpGet(url + src + '=' + username);
+    if (src == 'username') {
+      return res.them;
+    } else {
+      return res.them[0];
+    }
   }
 
-  exports.profile = function(username) {
-    var res = httpGet(url + 'username=' + username);
-    return res.them.profile;
+  exports.basics = function(username, src) {
+    src = checkSrc(src);
+    var res = httpGet(url + src + '=' + username + '&fields=basics');
+    if (src == 'username') {
+      return res.them.basics;
+    } else {
+      return res.them[0].basics;
+    }
   }
 
-  exports.public_keys = function(username) {
-    var res = httpGet(url + 'username=' + username);
-    return res.them.public_keys;
+  exports.profile = function(username, src) {
+    src = checkSrc(src);
+    var res = httpGet(url + src + '=' + username + '&fields=profile');
+    if (src == 'username') {
+      return res.them.profile;
+    } else {
+      return res.them[0].profile;
+    }
   }
 
-  exports.crypto_add = function(username) {
-    var res = httpGet(url + 'username=' + username);
-    return res.them.cryptocurrency_addresses;
+  exports.public_keys = function(username, src) {
+    src = checkSrc(src);
+    var res = httpGet(url + src + '=' + username + '&fields=public_keys');
+    if (src == 'username') {
+      return res.them.public_keys;
+    } else {
+      return res.them[0].public_keys;
+    }
+  }
+
+  exports.crypto_add = function(username, src) {
+    src = checkSrc(src);
+    var res = httpGet(url + src + '=' + username  + '&fields=cryptocurrency_addresses');
+    if (src == 'username') {
+      return res.them.cryptocurrency_addresses;
+    } else {
+      return res.them[0].cryptocurrency_addresses;
+    }
   }
   return exports
 }();
