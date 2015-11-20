@@ -1,6 +1,6 @@
 # keybase-user
 
-> Get user info a Keybase user
+> Get user info of a Keybase user
 
 ## Install
 
