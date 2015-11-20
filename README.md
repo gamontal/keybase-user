@@ -13,7 +13,7 @@ $ npm install --save keybase-user
 ```js
 var kbuser = require('keybase-user');
 // basic information
-console.log(kbuser.basics('max');
+console.log(kbuser.basics('max'));
 
   /* 
 	{
