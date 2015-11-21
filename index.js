@@ -15,63 +15,26 @@ var keybase_user = function() {
   }
 
   var url = 'https://keybase.io/_/api/1.0/user/lookup.json?';
-  function checkSrc(src) {
-    if (src === undefined) {
-      src = 'username';
-      return src;
-    } else {
-      return src;
-    }
-  }
+   exports.info = function(options, cb) {
+     var val = options.value;
+     var src = options.source || 'username';
 
-  exports.full = function(val, src) {
-    src = checkSrc(src);
-    var res = httpGet(url + src + '=' + val);
-    if (src == 'username') {
-      return res.them;
-    } else {
-      return res.them[0];
-    }
-  }
-
-  exports.basics = function(val, src) {
-    src = checkSrc(src);
-    var res = httpGet(url + src + '=' + val + '&fields=basics');
-    if (src == 'username') {
-      return res.them.basics;
-    } else {
-      return res.them[0].basics;
-    }
-  }
-
-  exports.profile = function(val, src) {
-    src = checkSrc(src);
-    var res = httpGet(url + src + '=' + val + '&fields=profile');
-    if (src == 'username') {
-      return res.them.profile;
-    } else {
-      return res.them[0].profile;
-    }
-  }
-
-  exports.public_keys = function(val, src) {
-    src = checkSrc(src);
-    var res = httpGet(url + src + '=' + val + '&fields=public_keys');
-    if (src == 'username') {
-      return res.them.public_keys;
-    } else {
-      return res.them[0].public_keys;
-    }
-  }
-
-  exports.crypto_add = function(val, src) {
-    src = checkSrc(src);
-    var res = httpGet(url + src + '=' + val  + '&fields=cryptocurrency_addresses');
-    if (src == 'username') {
-      return res.them.cryptocurrency_addresses;
-    } else {
-      return res.them[0].cryptocurrency_addresses;
-    }
-  }
+     var req = {
+       id: httpGet(url + src + '=' + val),
+       basics: httpGet(url + src + '=' + val + '&fields=basics'),
+       profile: httpGet(url + src + '=' + val + '&fields=profile'),
+       public_keys: httpGet(url + src + '=' + val + '&fields=public_keys'),
+       crypto_add: httpGet(url + src + '=' + val + '&fields=cryptocurrency_addresses')
+     }
+     
+     var res = {
+       id: req.id.them.id || req.id.them[0].id,
+       basics: req.basics.them.basics || req.basics.them[0].basics,
+       profile: req.profile.them.profile || req.profile.them[0].profile,
+       public_keys: req.public_keys.them.public_keys || req.public_keys.them[0].public_keys,
+       crypto_add: req.crypto_add.them.cryptocurrency_addresses || req.crypto_add.them[0].cryptocurrency_addresses
+     }
+     cb(res);
+   }
   return exports
 }();
