@@ -3,8 +3,18 @@
   "version": "1.0.4",
   "description": "Get user info of a Keybase user",
   "main": "index.js",
+  "devDependencies": {
+    "jshint": "^2.8.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/jshint/bin/jshint test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gmontalvoriv/keybase-user"
+  },
+  "bugs": {
+    "url": "https://github.com/gmontalvoriv/keybase-user/issues"
   },
   "keywords": [
     "keybase",
