@@ -8,18 +8,14 @@
 $ npm install --save keybase-user
 ```
 
-## Usage
+## Usage Examples
 
 ```js
 var kbuser = require('keybase-user');
 
-var newUser = {
-  basics: kbuser.basics('chris'),
-  public_keys: kbuser.public_keys('bitcoyne', 'coinbase')
-}
-
-console.log(newUser.public_keys.primary.key_fingerprint); // => 94aa3a5bdbd40ea549cabaf9fbc07d6a97016cb3
-console.log(newUser.basics);
+kbuser.info({ value: 'max' }, function(user) {
+  console.log(user.id); // => dbb165b7879fe7b1174df73bed0b9500
+  console.log(user.basics);
 
   /* 
 	{
@@ -31,6 +27,16 @@ console.log(newUser.basics);
          "last_id_change": 1447788494,
          "username_cased": "max" }
   */
+  
+});
+```
+
+```js
+var kbuser = require('keybase-user');
+
+kbuser.info({ value: 'bitcoyne', source: 'coinbase' }, function(user) {
+  console.log(user.id); // => 23260c2ce19420f97b58d7d95b68ca00
+});
 ```
 ## License
 
