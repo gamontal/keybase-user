@@ -60,6 +60,16 @@ Type: `string`
 - Ignoring this option will get results from a Keybase username
 - Visit the official [API](https://keybase.io/docs/api/1.0) for more information
 
+#### Supported methods
+
+| Name  | Description |
+| ----- | ----------- |
+| id    | The user's id (random 32-digit hex string). |
+| basics | The simplest and often most commonly-accessed info about a user. |
+| profile  | Profile information. By default, user.profile is null, until a user creates one. |
+| public_keys  | Public key bundle. You should access someone's public key with `public_keys.primary`.|
+| crypto_add  | Bitcoin address and signature id.  |
+
 ## License
 
 MIT © Gabriel Montalvo
