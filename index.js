@@ -1,4 +1,4 @@
-var keybase_user = function() {
+module.exports = exports = function(options, cb) {
   if (typeof require == 'function') {
     var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
     var exports = module.exports = {};	
@@ -15,16 +15,15 @@ var keybase_user = function() {
   }
 
   var url = 'https://keybase.io/_/api/1.0/user/lookup.json?';
-   exports.info = function(options, cb) {
      var val = options.value;
-     var src = options.source || 'username';
+     var proof = options.proof || 'username';
 
      var req = {
-       id: httpGet(url + src + '=' + val),
-       basics: httpGet(url + src + '=' + val + '&fields=basics'),
-       profile: httpGet(url + src + '=' + val + '&fields=profile'),
-       public_keys: httpGet(url + src + '=' + val + '&fields=public_keys'),
-       crypto_add: httpGet(url + src + '=' + val + '&fields=cryptocurrency_addresses')
+       id: httpGet(url + proof + '=' + val),
+       basics: httpGet(url + proof + '=' + val + '&fields=basics'),
+       profile: httpGet(url + proof + '=' + val + '&fields=profile'),
+       public_keys: httpGet(url + proof + '=' + val + '&fields=public_keys'),
+       crypto_add: httpGet(url + proof + '=' + val + '&fields=cryptocurrency_addresses')
      }
      
      var res = {
@@ -35,6 +34,4 @@ var keybase_user = function() {
        crypto_add: req.crypto_add.them.cryptocurrency_addresses || req.crypto_add.them[0].cryptocurrency_addresses
      }
      cb(res);
-   }
-  return exports
-}();
+}

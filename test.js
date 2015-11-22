@@ -1,7 +1,7 @@
-var kbuser = require('./index');
+const kbuser = require('./index');
 
 var usrInfo;
-kbuser.info({ value: 'max' }, function(user) {
+kbuser({ value: 'chris' }, function(user) {
   usrInfo = {
     id: user.id,
     basics: user.profile,
