@@ -11,9 +11,9 @@ $ npm install --save keybase-user
 ## Usage Examples
 
 ```js
-var kbuser = require('keybase-user');
+const kbuser = require('keybase-user');
 
-kbuser.info({ value: 'max' }, function(user) {
+kbuser({ value: 'max' }, function(user) {
   console.log(user.id); // => dbb165b7879fe7b1174df73bed0b9500
   console.log(user.basics);
 
@@ -32,12 +32,34 @@ kbuser.info({ value: 'max' }, function(user) {
 ```
 
 ```js
-var kbuser = require('keybase-user');
-
-kbuser.info({ value: 'bitcoyne', source: 'coinbase' }, function(user) {
+// other usernames
+kbuser({ value: 'bitcoyne', proof: 'coinbase' }, function(user) {
   console.log(user.id); // => 23260c2ce19420f97b58d7d95b68ca00
 });
 ```
+
+## API
+
+kbuser(value, [proof])
+
+#### value
+
+*Required*  
+Type: `string`
+
+Keybase/linked account username, domain name, or the user's fingerprint.
+
+#### proof (proof type)
+
+Type: `string`  
+
+- github, coinbase, hackernews, etc.
+
+***Notes:*** 
+
+- Ignoring this option will get results from a Keybase username
+- Visit the official [API](https://keybase.io/docs/api/1.0) for more information
+
 ## License
 
 MIT © Gabriel Montalvo
