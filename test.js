@@ -1,4 +1,4 @@
-const kbuser = require('./index');
+var kbuser = require('./index');
 
 var usrInfo;
 kbuser({ value: 'chris' }, function(user) {

@@ -11,7 +11,7 @@ $ npm install --save keybase-user
 ## Usage Examples
 
 ```js
-const kbuser = require('keybase-user');
+var kbuser = require('keybase-user');
 
 kbuser({ value: 'max' }, function(user) {
   console.log(user.id); // => dbb165b7879fe7b1174df73bed0b9500
