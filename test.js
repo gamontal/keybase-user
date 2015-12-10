@@ -7,6 +7,7 @@ kbuser({ value: 'chris' }, function(user) {
     basics: user.profile,
     profile: user.profile,
     public_keys: user.public_keys,
-    crypto_address: user.crypto_add
+    crypto_address: user.crypto_add,
+    all: user
   };
 });
