@@ -5,7 +5,7 @@ module.exports = exports = function(options, cb) {
         xmlHttp.open("GET", url, false);
         xmlHttp.send(null);
         return JSON.parse(xmlHttp.responseText);
-    }	
+    };
     
     var url = 'https://keybase.io/_/api/1.0/user/lookup.json?';
     var val = options.value;
