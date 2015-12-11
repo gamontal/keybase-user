@@ -13,7 +13,7 @@ $ npm install --save keybase-user
 ```js
 var kbuser = require('keybase-user');
 
-kbuser({ value: 'max' }, function(user) {
+kbuser('max').then(function(user) {
   console.log(user.id); // => dbb165b7879fe7b1174df73bed0b9500
   console.log(user.basics);
 
@@ -33,10 +33,11 @@ kbuser({ value: 'max' }, function(user) {
 
 ```js
 // other usernames
-kbuser({ value: 'bitcoyne', proof: 'coinbase' }, function(user) {
+kbuser('bitcoyne', 'coinbase').then(function(user) {
   console.log(user.id); // => 23260c2ce19420f97b58d7d95b68ca00
 });
 ```
+*Will return `null` if the user object doesn't exist*
 
 ## API
 
@@ -49,18 +50,25 @@ Type: `string`
 
 Keybase/linked account username, domain name, or the user's fingerprint.
 
-#### proof (proof type)
+#### proof
 
 Type: `string`  
 
 - github, coinbase, hackernews, etc.
 
+#### Promise
+
+##### user
+
+Type: `object`
+
+Various [user info](https://keybase.io/docs/api/1.0/user_objects).
+
 ***Notes:*** 
 
-- Ignoring this option will get results from a Keybase username
 - Visit the official [API](https://keybase.io/docs/api/1.0) for more information
 
-#### Supported methods
+#### User sub-objects
 
 | Name  | Description |
 | ----- | ----------- |
