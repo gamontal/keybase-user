@@ -1,4 +1,4 @@
-var kbuser = require('./index');
+var kbuser = require('./');
 
 var usr1, usr2;
 kbuser('chris').then(function(user) {
