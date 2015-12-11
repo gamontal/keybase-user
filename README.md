@@ -17,18 +17,17 @@ kbuser('max').then(function(user) {
   console.log(user.id); // => dbb165b7879fe7b1174df73bed0b9500
   console.log(user.basics);
 
-  /* 
-	{
-    username: 'max',
-    ctime: 1391657400,
-    mtime: 1421074124,
-    id_version: 150,
-    track_version: 99,
-    last_id_change: 1448627381,
-    username_cased: 'max'
-  }
-  */
-  
+/* 
+ {
+   username: 'max',
+   ctime: 1391657400,
+   mtime: 1421074124,
+   id_version: 150,
+   track_version: 99,
+   last_id_change: 1448627381,
+   username_cased: 'max'
+ }
+*/
 });
 ```
 
@@ -55,7 +54,11 @@ Keybase/linked account username, domain name, or the user's fingerprint.
 
 Type: `string`  
 
-- github, coinbase, hackernews, etc.
+Linked accounts like github, coinbase, hackernews, reddit, etc.
+
+***Notes:*** 
+
+- For domains and fingerprint queries use `domain` and `key_fingerprint`
 
 #### Promise
 
