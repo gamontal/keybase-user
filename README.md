@@ -19,13 +19,14 @@ kbuser('max').then(function(user) {
 
   /* 
 	{
-         "username": "max",
-         "ctime": 1391657400,
-         "mtime": 1421074124,
-         "id_version": 143,
-         "track_version": 91,
-         "last_id_change": 1447788494,
-         "username_cased": "max" }
+    username: 'max',
+    ctime: 1391657400,
+    mtime: 1421074124,
+    id_version: 150,
+    track_version: 99,
+    last_id_change: 1448627381,
+    username_cased: 'max'
+  }
   */
   
 });
