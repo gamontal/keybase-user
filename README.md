@@ -82,6 +82,10 @@ Various [user info](https://keybase.io/docs/api/1.0/user_objects).
 | public_keys  | Public key bundle. You should access someone's public key with `public_keys.primary`.|
 | crypto_add  | Bitcoin address and signature id.  |
 
+## Related
+
+- [keybase-primary](https://github.com/gmontalvoriv/keybase-primary) - Get the primary public key of a Keybase user
+
 ## License
 
-MIT © Gabriel Montalvo
+MIT © [Gabriel Montalvo](http://gmontalvoriv.github.io/)
