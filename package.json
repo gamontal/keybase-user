@@ -7,7 +7,7 @@
     "jshint": "^2.8.0"
   },
   "scripts": {
-    "test": "./node_modules/jshint/bin/jshint test.js"
+    "test": "ava ./test.js"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,8 @@
   "dependencies": {
     "bluebird": "^3.0.6",
     "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "ava": "*"
   }
 }

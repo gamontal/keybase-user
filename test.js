@@ -1,25 +1,11 @@
-var kbuser = require('./');
+import test from 'ava';
+import fn from './';
 
-var usr1, usr2;
-kbuser('chris').then(function(user) {
-  usr1 = {
-    id: user.id,
-    basics: user.basics,
-    profile: user.profile,
-    public_keys: user.public_keys,
-    crypto_address: user.crypto_add,
-    all: user
-  };
-});
+test(async t => {
+	var USER = await fn('chris');
 
-kbuser('bitcoyne', 'coinbase').then(function(user) {
-  usr2 = {
-    id: user.id,
-    basics: user.basics,
-    profile: user.profile,
-    public_keys: user.public_keys,
-    crypto_address: user.crypto_add,
-    all: user
-  };
+	t.is(USER.id, '23260c2ce19420f97b58d7d95b68ca00');
+	t.is(USER.basics.username, 'chris');
+
 });
 
