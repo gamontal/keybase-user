@@ -80,7 +80,7 @@ Various [user info](https://keybase.io/docs/api/1.0/user_objects).
 | basics | The simplest and often most commonly-accessed info about a user. |
 | profile  | Profile information. By default, user.profile is null, until a user creates one. |
 | public_keys  | Public key bundle. You should access someone's public key with `public_keys.primary`.|
-| crypto_add  | Bitcoin address and signature id.  |
+| crypto_address  | Bitcoin address and signature id.  |
 
 ## Related
 
