@@ -29,7 +29,7 @@ module.exports =  function(v, p) {
       basics: httpGet(url + proof + '=' + val + '&fields=basics'),
       profile: httpGet(url + proof + '=' + val + '&fields=profile'),
       public_keys: httpGet(url + proof + '=' + val + '&fields=public_keys'),
-      crypto_add: httpGet(url + proof + '=' + val + '&fields=cryptocurrency_addresses')
+      crypto_address: httpGet(url + proof + '=' + val + '&fields=cryptocurrency_addresses')
     };
 
     if (req.id.them === undefined) {
@@ -42,7 +42,7 @@ module.exports =  function(v, p) {
         basics: req.basics.them.basics || req.basics.them[0].basics,
         profile: req.profile.them.profile || req.profile.them[0].profile,
         public_keys: req.public_keys.them.public_keys || req.public_keys.them[0].public_keys,
-        crypto_add: req.crypto_add.them.cryptocurrency_addresses || req.crypto_add.them[0].cryptocurrency_addresses
+        crypto_address: req.crypto_address.them.cryptocurrency_addresses || req.crypto_address.them[0].cryptocurrency_addresses
       };
       return resolve(res);
     }
