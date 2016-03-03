@@ -88,4 +88,4 @@ Various [user info](https://keybase.io/docs/api/1.0/user_objects).
 
 ## License
 
-MIT © [Gabriel Montalvo](http://gmontalvoriv.github.io/)
+[MIT](https://github.com/gmontalvoriv/keybase-user/blob/master/LICENSE) © Gabriel Montalvo
