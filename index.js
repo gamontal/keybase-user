@@ -1,17 +1,19 @@
-var Promise = require('bluebird');
+'use strict';
+
+const Promise = require('bluebird');
 
 module.exports =  function(v, p) {
-  var XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-  var xmlHttp;
-  var httpGet = function(url) {
+  const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+  let xmlHttp;
+  let httpGet = function(url) {
     xmlHttp = new XMLHttpRequest();
     xmlHttp.open('GET', url, false);
     xmlHttp.send(null);
     return JSON.parse(xmlHttp.responseText);
   };
 
-  var url = 'https://keybase.io/_/api/1.0/user/lookup.json?', res, req;
-  var val = v, proof;
+  let url = 'https://keybase.io/_/api/1.0/user/lookup.json?', res, req;
+  let val = v, proof;
 
   if (p === undefined) {
     proof  = 'username';
