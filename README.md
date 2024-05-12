@@ -1,3 +1,5 @@
+## ⚠️ This repository is no longer maintained.
+
 # keybase-user [![Build Status](https://travis-ci.org/gmontalvoriv/keybase-user.svg?branch=master)](https://travis-ci.org/gmontalvoriv/keybase-user)
 
 > Get user info of a Keybase user
